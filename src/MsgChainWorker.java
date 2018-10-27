@@ -85,27 +85,33 @@ public class MsgChainWorker {
         //TODO: more correct splitting
         String[] chainElements = msgChain.getStatement().split("\\.");
 
-        for(int i=0; i<chainElements.length-1; i++){
+        for(int i=0; i<chainElements.length; i++){
             String chainElement = chainElements[i];
             OurClass nextClass;
 
-            if(i==0){
-                nextClass = getTypeFromVariable(chainElement, parentMethod);
+            if(i<chainElements.length-1) {
+                if(i==0){
+                    nextClass = getTypeFromVariable(chainElement, parentMethod);
+                }
+                else{
+                    nextClass = getTypeFromMethod(chainElement, currClass);
+                }
+
+                msgChain.addToModifiedText(modifyClassText(parentMethod, chainElement, msgChain.getChainEnder()));
+
+                OurMethod newMethod = new OurMethod(msgChain.getChainEnder(), "public .1 " + msgChain.getChainEnder(), nextClass);
+                String lastClassModifier = modifyClassText(newMethod, getRestOfChain(chainElements, i), msgChain.getChainEnder());
+
+                if(i==chainElements.length-2)
+                    msgChain.addToModifiedText(lastClassModifier);
+
+                currClass = nextClass;
+                parentMethod = newMethod;
             }
             else{
-                nextClass = getTypeFromMethod(chainElement, currClass);
+                String enderMethodType = getTypeStringFromMethod(msgChain.getChainEnder(), getTypeFromMethod(chainElement, currClass));
+                msgChain.setTextModification(msgChain.getTextModification().replace(".1", enderMethodType));
             }
-
-            msgChain.addToModifiedText(modifyClassText(parentMethod, chainElement, msgChain.getChainEnder()));
-
-            OurMethod newMethod = new OurMethod(msgChain.getChainEnder(), "public .1 " + msgChain.getChainEnder(), nextClass);
-            String lastClassModifier = modifyClassText(newMethod, getRestOfChain(chainElements, i), msgChain.getChainEnder());
-
-            if(i==chainElements.length-2)
-                msgChain.addToModifiedText(lastClassModifier);
-
-            currClass = nextClass;
-            parentMethod = newMethod;
         }
     }
 
@@ -138,10 +144,21 @@ public class MsgChainWorker {
         return null;
     }
 
+    private String getTypeStringFromMethod(String chainElement, OurClass currClass) {
+        for(OurMethod currMethod : currClass.getMethods()){
+            if(currMethod.getName().equals(getSkimmedMethodName(chainElement))){
+                return currMethod.getTypeString();
+            }
+        }
+
+        return null;
+    }
+
     private String getSkimmedMethodName(String methodName) {
         int index = methodName.indexOf("(");
-        String skimmedMethodName = methodName.substring(0, index);
-        return skimmedMethodName;
+        if(index>0)
+            return methodName.substring(0, index);
+        return methodName;
     }
 
     private OurClass getTypeFromVariable(String chainElement, OurMethod parentMethod) {

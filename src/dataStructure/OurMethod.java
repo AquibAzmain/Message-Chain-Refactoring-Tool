@@ -12,6 +12,7 @@ public class OurMethod {
     private String signature;
     private OurClass parentClass;
     private OurClass type;
+    private String typeString;
 
     private MethodDeclaration md;
 
@@ -97,5 +98,13 @@ public class OurMethod {
 
     public List<OurVariable> getVariables() {
         return variables;
+    }
+
+    public String getTypeString() {
+        return typeString;
+    }
+
+    public void setTypeString(String typeString) {
+        this.typeString = typeString;
     }
 }

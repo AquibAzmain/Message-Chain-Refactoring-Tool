@@ -59,6 +59,10 @@ public class OurMessageChain {
         return textModification;
     }
 
+    public void setTextModification(String textModification) {
+        this.textModification = textModification;
+    }
+
     public String getChainEnder() {
         return mce.getName().asString();
     }

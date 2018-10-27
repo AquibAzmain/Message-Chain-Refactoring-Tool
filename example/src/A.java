@@ -1,7 +1,7 @@
 public class A {
     public B b;
 
-    public void runA(){
+    protected void runA(String a){
         b.getC().getD().runD();
     }
 

@@ -21,6 +21,7 @@ public class MethodNameCollector extends VoidVisitorAdapter<List<OurMethod>> {
         super.visit(md, collector);
         OurMethod currMethod = new OurMethod(md.getName().asString(), md.getDeclarationAsString(), currClass);
         currMethod.setType(findType(md));
+        currMethod.setTypeString(md.getTypeAsString());
         currMethod.setMd(md);
         collector.add(currMethod);
 
@@ -28,7 +29,7 @@ public class MethodNameCollector extends VoidVisitorAdapter<List<OurMethod>> {
     }
 
     private OurClass findType(MethodDeclaration md) {
-        String type = md.getType().asString();
+        String type = md.getTypeAsString();
         for(OurClass clazz : classes){
             if(clazz.getName().equals(type)) {
                 return clazz;
