@@ -12,6 +12,8 @@ import visitors.VariableCollector;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,10 +74,28 @@ public class MsgChainWorker {
 
         for(OurMessageChain msgChain: allMsgChains){
             refactorMsgChain(msgChain);
-            System.out.println(msgChain + "\n-----\n");
-            System.out.println(msgChain.getTextModification());
-            System.out.println("\n----------------------------------\n");
         }
+
+        printOutput();
+    }
+
+    private void printOutput() {
+        try {
+            PrintStream out = new PrintStream(new FileOutputStream(
+                    "OutFile.txt"));
+
+            out.println("Following are the Message Chains in the project and their respective refactoring suggestion:");
+            for(OurMessageChain msgChain: allMsgChains){
+                out.println("\n----------------------------------\n" + msgChain + "\n-----\n");
+                out.print(msgChain.getTextModification());
+            }
+
+            out.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void refactorMsgChain(OurMessageChain msgChain) {
