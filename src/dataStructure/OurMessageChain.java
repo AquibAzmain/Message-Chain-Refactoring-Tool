@@ -2,6 +2,9 @@ package dataStructure;
 
 import com.github.javaparser.ast.expr.MethodCallExpr;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OurMessageChain {
     private MethodCallExpr mce;
     private String statement;

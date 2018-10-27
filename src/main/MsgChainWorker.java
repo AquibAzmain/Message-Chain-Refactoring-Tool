@@ -1,3 +1,5 @@
+package main;
+
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import dataStructure.OurClass;
@@ -103,7 +105,7 @@ public class MsgChainWorker {
         OurClass currClass = parentMethod.getParentClass();
 
         //TODO: more correct splitting
-        String[] chainElements = msgChain.getStatement().split("\\.");
+        String[] chainElements = MyUtils.splitScope(msgChain.getStatement());
 
         for(int i=0; i<chainElements.length; i++){
             String chainElement = chainElements[i];
