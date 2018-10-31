@@ -1,25 +1,60 @@
-There are 1 Message Chains in this project
+There are 2 Message Chains in this project
 Following are the Message Chains and their respective refactoring suggestion:
 
 ----------------------------------
-1. OurMessageChain{ c.getGroups().iterator(), containerMethod= receiveConfig(), containerClass= JaimTest}
+1. OurMessageChain{ b.getC(a).getD().runD(), containerMethod= runA(), containerClass= A}
 -----
 
-public class JaimTest{
+public class A{
 ...
-	private void receiveConfig(){
+	protected void runA(String a){
 	...
-		... c.iterator();
+		... b.cDRunD();
 	...
 	}
 ...
 }
 
-public class JaimConnection{
+public class B{
 ...
-	public void iterator(){
+	public void cDRunD(){
 	...
-		... getGroups().iterator();
+		... getC(a).dRunD();
+	...
+	}
+...
+}
+
+public class C{
+...
+	public void dRunD(){
+	...
+		... getD().runD();
+	...
+	}
+...
+}
+
+
+----------------------------------
+2. OurMessageChain{ a.getB().runB(), containerMethod= runD(), containerClass= D}
+-----
+
+public class D{
+...
+	void runD(){
+	...
+		... a.bRunB();
+	...
+	}
+...
+}
+
+public class A{
+...
+	public void bRunB(){
+	...
+		... getB().runB();
 	...
 	}
 ...

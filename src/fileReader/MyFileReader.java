@@ -35,7 +35,7 @@ public class MyFileReader {
 			String parentDir = file.getParent();
 			File folder = new File(parentDir+ "/" + projectName);
 			folder = new File(("D:\\Studies\\Semester 8\\Metrics\\Object-Oriented-Metrics-Tool\\jaimlib\\src"));
-//			folder = new File(("D:\\Programming\\Eclipse\\workspace\\Message Chain Refactoring Tool\\example\\src"));
+			folder = new File(("D:\\Programming\\Eclipse\\workspace\\Message Chain Refactoring Tool\\example\\src"));
 			listFilesForFolder(folder);
 //			input.close();
 		}

@@ -123,9 +123,10 @@ public class MsgChainWorker {
                     break;
                 }
 
-                msgChain.addToModifiedText(modifyClassText(parentMethod, chainElement, msgChain.getChainEnder()));
+                String newMethodName = getNewMethodName(i, chainElements, msgChain);
+                msgChain.addToModifiedText(modifyClassText(parentMethod, chainElement, newMethodName));
 
-                OurMethod newMethod = new OurMethod(msgChain.getChainEnder(), "public .1 " + msgChain.getChainEnder() + "()", nextClass);
+                OurMethod newMethod = new OurMethod(newMethodName , "public .1 " + newMethodName + "()", nextClass);
                 String lastClassModifier = modifyClassText(newMethod, getRestOfChain(chainElements, i), msgChain.getChainEnder());
 
                 if(i==chainElements.length-2)
@@ -147,6 +148,19 @@ public class MsgChainWorker {
         if(msgChain.getTextModification().isEmpty())
             return null;
         return msgChain;
+    }
+
+    private String getNewMethodName(int index, String[] chainElements, OurMessageChain msgChain) {
+        String name = "";
+
+        for(int i=index+1; i<chainElements.length; i++){
+            String currMethodName = MyUtils.capitalize(getSkimmedMethodName(chainElements[i]).replace("get", ""));
+            name += currMethodName;
+        }
+
+        name += MyUtils.capitalize(getSkimmedMethodName(msgChain.getChainEnder()).replace("get", ""));
+
+        return MyUtils.decapitalize(name);
     }
 
     private boolean isInnerMethod(OurClass currClass, String chainElement) {
