@@ -22,37 +22,38 @@ import java.util.List;
 public class MsgChainWorker {
     public static List<OurClass> allClasses;
     public static List<OurMethod> allMethods;
-    public static List<OurMessageChain> allMsgChains;
+    public static List<OurMessageChain> allMsgChains, finalMsgChains;
 
     public MsgChainWorker(){
         allClasses = new ArrayList<>();
         allMethods = new ArrayList<>();
         allMsgChains = new ArrayList<>();
+        finalMsgChains = new ArrayList<>();
     }
 
-    public void init(){
+    public void run(){
         ArrayList<String> fileList;
         MyFileReader myFileReader = new MyFileReader();
         fileList = myFileReader.manageFileReader();
 
         try {
-            populateClasses(fileList);
+            detectMessageChains(fileList);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
+        for(OurMessageChain msgChain: allMsgChains){
+            OurMessageChain newMsgChain = refactorMsgChain(msgChain);
+            if(newMsgChain != null)
+                finalMsgChains.add(newMsgChain);
+        }
+
+        printOutput();
     }
 
-    public void populateClasses(List<String> filePaths) throws FileNotFoundException {
+    public void detectMessageChains(List<String> filePaths) throws FileNotFoundException {
         for(String filePath: filePaths){
-            String fileArr[] = filePath.split("\\\\");
-
-            String javaSplitName[] = fileArr[fileArr.length-1].split("\\.");
-
-            OurClass ourClass = new OurClass(javaSplitName[0], fileArr[fileArr.length-2]);
-            ourClass.setFilePath(filePath);
-            ourClass.setCompilationUnit(getCompilationUnitFromFile(filePath));
-
-            allClasses.add(ourClass);
+            populateClasses(filePath);
         }
 
         for(OurClass currClass: allClasses){
@@ -64,21 +65,18 @@ public class MsgChainWorker {
             populateMethodVariables(currMethod);
             populateMessageChains(currMethod);
         }
+    }
 
-        for(OurClass clazz: allClasses){
-            System.out.println(clazz);
-            System.out.println();
-        }
+    private void populateClasses(String filePath) throws FileNotFoundException {
+        String fileArr[] = filePath.split("\\\\");
 
-//        for(OurMessageChain msgChain: allMsgChains){
-//            System.out.println(msgChain);
-//        }
+        String javaSplitName[] = fileArr[fileArr.length-1].split("\\.");
 
-        for(OurMessageChain msgChain: allMsgChains){
-            refactorMsgChain(msgChain);
-        }
+        OurClass ourClass = new OurClass(javaSplitName[0], fileArr[fileArr.length-2]);
+        ourClass.setFilePath(filePath);
+        ourClass.setCompilationUnit(getCompilationUnitFromFile(filePath));
 
-        printOutput();
+        allClasses.add(ourClass);
     }
 
     private void printOutput() {
@@ -86,9 +84,12 @@ public class MsgChainWorker {
             PrintStream out = new PrintStream(new FileOutputStream(
                     "OutFile.txt"));
 
-            out.println("Following are the Message Chains in the project and their respective refactoring suggestion:");
-            for(OurMessageChain msgChain: allMsgChains){
-                out.println("\n----------------------------------\n" + msgChain + "\n-----\n");
+            out.println("There are " + finalMsgChains.size() + " Message Chains in this project");
+            out.println("Following are the Message Chains and their respective refactoring suggestion:");
+
+            int i=1;
+            for(OurMessageChain msgChain: finalMsgChains){
+                out.println("\n----------------------------------\n" + i++ + ". " + msgChain + "\n-----\n");
                 out.print(msgChain.getTextModification());
             }
 
@@ -100,11 +101,10 @@ public class MsgChainWorker {
 
     }
 
-    private void refactorMsgChain(OurMessageChain msgChain) {
+    private OurMessageChain refactorMsgChain(OurMessageChain msgChain) {
         OurMethod parentMethod = msgChain.getContainerMethod();
         OurClass currClass = parentMethod.getParentClass();
 
-        //TODO: more correct splitting
         String[] chainElements = MyUtils.splitScope(msgChain.getStatement());
 
         for(int i=0; i<chainElements.length; i++){
@@ -119,9 +119,13 @@ public class MsgChainWorker {
                     nextClass = getTypeFromMethod(chainElement, currClass);
                 }
 
+                if(!isInnerMethod(nextClass, chainElements[i+1])){
+                    break;
+                }
+
                 msgChain.addToModifiedText(modifyClassText(parentMethod, chainElement, msgChain.getChainEnder()));
 
-                OurMethod newMethod = new OurMethod(msgChain.getChainEnder(), "public .1 " + msgChain.getChainEnder(), nextClass);
+                OurMethod newMethod = new OurMethod(msgChain.getChainEnder(), "public .1 " + msgChain.getChainEnder() + "()", nextClass);
                 String lastClassModifier = modifyClassText(newMethod, getRestOfChain(chainElements, i), msgChain.getChainEnder());
 
                 if(i==chainElements.length-2)
@@ -131,10 +135,28 @@ public class MsgChainWorker {
                 parentMethod = newMethod;
             }
             else{
-                String enderMethodType = getTypeStringFromMethod(msgChain.getChainEnder(), getTypeFromMethod(chainElement, currClass));
+                OurClass currMethodType = getTypeFromMethod(chainElement, currClass);
+                String enderMethodType = "void";
+
+                if(!(currMethodType == null))
+                    enderMethodType = getTypeStringFromMethod(msgChain.getChainEnder(), currMethodType);
                 msgChain.setTextModification(msgChain.getTextModification().replace(".1", enderMethodType));
             }
         }
+
+        if(msgChain.getTextModification().isEmpty())
+            return null;
+        return msgChain;
+    }
+
+    private boolean isInnerMethod(OurClass currClass, String chainElement) {
+        for(OurMethod currMethod : currClass.getMethods()){
+            if(currMethod.getName().equals(getSkimmedMethodName(chainElement))){
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private String getRestOfChain(String[] chainElements, int index) {
@@ -173,7 +195,7 @@ public class MsgChainWorker {
             }
         }
 
-        return null;
+        return "void";
     }
 
     private String getSkimmedMethodName(String methodName) {

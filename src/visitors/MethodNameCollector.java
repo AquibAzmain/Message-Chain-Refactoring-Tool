@@ -24,8 +24,6 @@ public class MethodNameCollector extends VoidVisitorAdapter<List<OurMethod>> {
         currMethod.setTypeString(md.getTypeAsString());
         currMethod.setMd(md);
         collector.add(currMethod);
-
-        System.out.println(currMethod);
     }
 
     private OurClass findType(MethodDeclaration md) {

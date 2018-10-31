@@ -25,7 +25,6 @@ public class MyUtils {
             }
         }
 
-        System.out.println("> " + scopeList);
         String[] scopes = new String[scopeList.size()];
         return scopeList.toArray(scopes);
     }

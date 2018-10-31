@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89a672a1-24ab-49d2-968b-e0114dcbe626" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/MyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MsgChainWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MsgChainWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OutFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OutFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/A.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/A.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/B.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/B.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/C.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/C.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Message Chain Refactoring Tool/dataStructure/OurMessageChain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Message Chain Refactoring Tool/dataStructure/OurMessageChain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Message Chain Refactoring Tool/fileReader/MyFileReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Message Chain Refactoring Tool/fileReader/MyFileReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Message Chain Refactoring Tool/visitors/MethodCallCollector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Message Chain Refactoring Tool/visitors/MethodCallCollector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/OurClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/OurClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataStructure/OurMessageChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/OurMessageChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/OurMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/OurMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileReader/MyFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileReader/MyFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MsgChainWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MsgChainWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/visitors/MethodCallCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visitors/MethodCallCollector.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,26 +29,27 @@
     <session id="-1607646857">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.50" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="4" />
-          <entry key="java" value="31" />
-          <entry key="txt" value="7" />
+          <entry key="java" value="41" />
+          <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="4" />
-          <entry key="JAVA" value="31" />
-          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="JAVA" value="41" />
+          <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -48,25 +59,37 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="14" />
-          <entry key="java" value="3848" />
-          <entry key="txt" value="65" />
+          <entry key="java" value="4518" />
+          <entry key="txt" value="85" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3848" />
-          <entry key="PLAIN_TEXT" value="79" />
+          <entry key="JAVA" value="4518" />
+          <entry key="PLAIN_TEXT" value="99" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/MsgChainWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="107" column="40" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="40" />
+            <state relative-caret-position="153">
+              <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/visitors/MethodCallCollector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,29 +99,9 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OutFile.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/visitors/MethodCallCollector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/MyUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -107,12 +110,36 @@
         <entry file="file://$PROJECT_DIR$/example/src/A.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
               <folding>
-                <element signature="e#56#57#0" expanded="true" />
-                <element signature="e#94#95#0" expanded="true" />
-                <element signature="e#120#121#0" expanded="true" />
-                <element signature="e#156#157#0" expanded="true" />
+                <element signature="e#242#243#0" expanded="true" />
+                <element signature="e#282#283#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/src/B.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+              <folding>
+                <element signature="e#45#46#0" expanded="true" />
+                <element signature="e#75#76#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/src/C.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+              <folding>
+                <element signature="e#89#90#0" expanded="true" />
+                <element signature="e#110#111#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,11 +148,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dataStructure/OurMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+            <state relative-caret-position="255">
+              <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
               <folding>
-                <element signature="e#1216#1217#0" expanded="true" />
-                <element signature="e#1243#1244#0" expanded="true" />
+                <element signature="e#1142#1143#0" expanded="true" />
+                <element signature="e#1169#1170#0" expanded="true" />
                 <element signature="e#2175#2176#0" expanded="true" />
                 <element signature="e#2208#2209#0" expanded="true" />
                 <element signature="e#2260#2261#0" expanded="true" />
@@ -136,56 +163,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dataStructure/OurClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1803#1804#0" expanded="true" />
+                <element signature="e#1881#1882#0" expanded="true" />
+                <element signature="e#2274#2275#0" expanded="true" />
+                <element signature="e#2304#2305#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fileReader/MyFileReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dataStructure/OurMessageChain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+            <state relative-caret-position="141">
+              <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1333#1334#0" expanded="true" />
-                <element signature="e#1373#1374#0" expanded="true" />
-                <element signature="e#1416#1417#0" expanded="true" />
-                <element signature="e#1455#1456#0" expanded="true" />
-                <element signature="e#1519#1520#0" expanded="true" />
-                <element signature="e#1575#1576#0" expanded="true" />
-                <element signature="e#1492#1493#0" expanded="true" />
-                <element signature="e#1539#1540#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/External_Jars/javaparser-core-3.6.20.jar!/com/github/javaparser/ast/expr/SimpleName.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="67" selection-start-line="67" selection-end-line="67" />
-              <folding>
-                <element signature="e#2147#2148#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/visitors/MethodNameCollector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/External_Jars/javaparser-core-3.6.20.jar!/com/github/javaparser/ast/expr/MethodCallExpr.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="92" selection-start-line="92" selection-end-line="92" />
-              <folding>
-                <element signature="e#3984#3985#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -213,22 +221,24 @@
       <list>
         <option value="$PROJECT_DIR$/src/Populator.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/fileReader/MyFileReader.java" />
-        <option value="$PROJECT_DIR$/src/dataStructure/OurClass.java" />
         <option value="$PROJECT_DIR$/src/visitors/InstanceFieldCollector.java" />
         <option value="$PROJECT_DIR$/src/visitors/VariableFetcher.java" />
         <option value="$PROJECT_DIR$/src/visitors/VariableCollector.java" />
         <option value="$PROJECT_DIR$/src/visitors/MethodCallFetcher.java" />
-        <option value="$PROJECT_DIR$/example/src/C.java" />
         <option value="$PROJECT_DIR$/example/src/D.java" />
         <option value="$PROJECT_DIR$/example/src/B.java" />
         <option value="$PROJECT_DIR$/src/visitors/MethodNameCollector.java" />
-        <option value="$PROJECT_DIR$/example/src/A.java" />
-        <option value="$PROJECT_DIR$/src/dataStructure/OurMessageChain.java" />
         <option value="$PROJECT_DIR$/src/MyUtils.java" />
         <option value="$PROJECT_DIR$/src/MsgChainWorker.java" />
-        <option value="$PROJECT_DIR$/src/dataStructure/OurMethod.java" />
+        <option value="$PROJECT_DIR$/src/main/MyUtils.java" />
+        <option value="$PROJECT_DIR$/example/src/C.java" />
         <option value="$PROJECT_DIR$/src/visitors/MethodCallCollector.java" />
+        <option value="$PROJECT_DIR$/src/fileReader/MyFileReader.java" />
+        <option value="$PROJECT_DIR$/src/dataStructure/OurMethod.java" />
+        <option value="$PROJECT_DIR$/src/dataStructure/OurClass.java" />
+        <option value="$PROJECT_DIR$/src/dataStructure/OurMessageChain.java" />
+        <option value="$PROJECT_DIR$/example/src/A.java" />
+        <option value="$PROJECT_DIR$/src/main/MsgChainWorker.java" />
       </list>
     </option>
   </component>
@@ -251,6 +261,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,11 +285,22 @@
               <item name="Message Chain Refactoring Tool" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Message Chain Refactoring Tool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Message Chain Refactoring Tool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fileReader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Message Chain Refactoring Tool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Message Chain Refactoring Tool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="visitors" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,18 +315,19 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Programming\Eclipse\workspace\Message Chain Refactoring Tool" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="main" />
       <recent name="dataStructure" />
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\Eclipse\workspace\Message Chain Refactoring Tool\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="fileReader" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Programming\Eclipse\workspace\Message Chain Refactoring Tool\src" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\Eclipse\workspace\Message Chain Refactoring Tool" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -346,7 +369,8 @@
       <workItem from="1540471175797" duration="8108000" />
       <workItem from="1540532659232" duration="16251000" />
       <workItem from="1540627623283" duration="3176000" />
-      <workItem from="1540664948277" duration="6188000" />
+      <workItem from="1540664948277" duration="6306000" />
+      <workItem from="1541005744057" duration="8285000" />
     </task>
     <task id="LOCAL-00001" summary="last method return type propagation">
       <created>1540670047247</created>
@@ -362,11 +386,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540670771336</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="splitting rectified">
+      <created>1540672929785</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1540672929785</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33723000" />
+    <option name="totallyTimeSpent" value="42126000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -381,18 +412,18 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23489933" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23825504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43687943" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4425532" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5886525" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -416,16 +447,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="last method return type propagation" />
     <MESSAGE value="output to txt file" />
-    <option name="LAST_COMMIT_MESSAGE" value="output to txt file" />
+    <MESSAGE value="splitting rectified" />
+    <option name="LAST_COMMIT_MESSAGE" value="splitting rectified" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/fileReader/MyFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="36" column="108" selection-start-line="36" selection-start-column="108" selection-end-line="36" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -462,37 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/C.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataStructure/OurClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1803#1804#0" expanded="true" />
-            <element signature="e#1881#1882#0" expanded="true" />
-            <element signature="e#2304#2305#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/B.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="e#37#38#0" expanded="true" />
-            <element signature="e#67#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/src/D.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -500,6 +494,36 @@
           <folding>
             <element signature="e#41#42#0" expanded="true" />
             <element signature="e#72#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/External_Jars/javaparser-core-3.6.20.jar!/com/github/javaparser/ast/expr/SimpleName.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="e#2147#2148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/External_Jars/javaparser-core-3.6.20.jar!/com/github/javaparser/ast/expr/MethodCallExpr.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="e#3984#3985#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/MyUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -514,87 +538,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/External_Jars/javaparser-core-3.6.20.jar!/com/github/javaparser/ast/expr/MethodCallExpr.class">
+    <entry file="file://$PROJECT_DIR$/example/src/C.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="68">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
           <folding>
-            <element signature="e#3984#3985#0" expanded="true" />
+            <element signature="e#89#90#0" expanded="true" />
+            <element signature="e#110#111#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/External_Jars/javaparser-core-3.6.20.jar!/com/github/javaparser/ast/expr/SimpleName.class">
+    <entry file="file://$PROJECT_DIR$/src/fileReader/MyFileReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="e#2147#2148#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/A.java">
+    <entry file="file://$PROJECT_DIR$/src/dataStructure/OurClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding>
-            <element signature="e#56#57#0" expanded="true" />
-            <element signature="e#94#95#0" expanded="true" />
-            <element signature="e#120#121#0" expanded="true" />
-            <element signature="e#156#157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OutFile.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataStructure/OurMessageChain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1333#1334#0" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
-            <element signature="e#1416#1417#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-            <element signature="e#1575#1576#0" expanded="true" />
-            <element signature="e#1492#1493#0" expanded="true" />
-            <element signature="e#1539#1540#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MyUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MsgChainWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="107" column="40" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1803#1804#0" expanded="true" />
+            <element signature="e#1881#1882#0" expanded="true" />
+            <element signature="e#2274#2275#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataStructure/OurMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        <state relative-caret-position="255">
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
           <folding>
-            <element signature="e#1216#1217#0" expanded="true" />
-            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1142#1143#0" expanded="true" />
+            <element signature="e#1169#1170#0" expanded="true" />
             <element signature="e#2175#2176#0" expanded="true" />
             <element signature="e#2208#2209#0" expanded="true" />
             <element signature="e#2260#2261#0" expanded="true" />
@@ -603,10 +585,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataStructure/OurMessageChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/A.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding>
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/B.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          <folding>
+            <element signature="e#45#46#0" expanded="true" />
+            <element signature="e#75#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/visitors/MethodCallCollector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
+        <state relative-caret-position="174">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OutFile.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/MsgChainWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

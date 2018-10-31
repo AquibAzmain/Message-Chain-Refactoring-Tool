@@ -21,10 +21,9 @@ public class OurMessageChain {
 
     @Override
     public String toString() {
-        return "OurMessageChain{" +
-                ", statement='" + statement + '\'' +
-                ", containerMethod=" + containerMethod +
-                ", end='" + mce.getName() + '\'' +
+        return "OurMessageChain{ " + mce +
+                ", containerMethod= " + containerMethod +
+                ", containerClass= " + containerMethod.getParentClass() +
                 '}';
     }
 

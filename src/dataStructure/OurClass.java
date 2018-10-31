@@ -75,7 +75,7 @@ public class OurClass {
 
     @Override
     public String toString() {
-        return name +  " [containerPackage: " + containerPackage + "]";
+        return name;
     }
 
     // getters / setters

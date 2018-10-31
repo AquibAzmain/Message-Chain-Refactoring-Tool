@@ -1,5 +1,5 @@
 public class B {
-    public C getC() {
+    public C getC(String a) {
         return new C();
     }
 
