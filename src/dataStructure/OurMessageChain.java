@@ -2,26 +2,30 @@ package dataStructure;
 
 import com.github.javaparser.ast.expr.MethodCallExpr;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Comparator;
 
-public class OurMessageChain {
+public class OurMessageChain implements Comparable<OurMessageChain> {
     private MethodCallExpr mce;
     private String statement;
     private OurMethod containerMethod;
+    private int degree;
+    private ChainCategory chainCategory;
 
     private String textModification;
 
-    public OurMessageChain(MethodCallExpr mce, String statement, OurMethod containerMethod) {
+    public OurMessageChain(MethodCallExpr mce, String statement, OurMethod containerMethod, int degree) {
         this.mce = mce;
         this.statement = statement;
         this.containerMethod = containerMethod;
         textModification = "";
+        this.degree = degree;
     }
 
     @Override
     public String toString() {
         return "OurMessageChain{ " + mce +
+                ", degree= " + degree +
+                ", category= " + chainCategory +
                 ", containerMethod= " + containerMethod +
                 ", containerClass= " + containerMethod.getParentClass() +
                 '}';
@@ -67,5 +71,26 @@ public class OurMessageChain {
 
     public String getChainEnder() {
         return mce.getName().asString();
+    }
+
+    public int getDegree() {
+        return degree;
+    }
+
+    public void setDegree(int degree) {
+        this.degree = degree;
+    }
+
+    public ChainCategory getChainCategory() {
+        return chainCategory;
+    }
+
+    public void setChainCategory(ChainCategory chainCategory) {
+        this.chainCategory = chainCategory;
+    }
+
+    @Override
+    public int compareTo(OurMessageChain o) {
+        return o.getDegree()-degree;
     }
 }

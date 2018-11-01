@@ -22,7 +22,7 @@ public class MethodCallCollector extends VoidVisitorAdapter<List<OurMessageChain
             String scope = mce.getScope().get().toString();
             String[] scopeElements = MyUtils.splitScope(scope);
             if(isVariable(scopeElements[0]) && scopeElements.length>=2) {
-                msgChains.add(new OurMessageChain(mce, scope, currMethod));
+                msgChains.add(new OurMessageChain(mce, scope, currMethod, scopeElements.length));
             }
         }
     }

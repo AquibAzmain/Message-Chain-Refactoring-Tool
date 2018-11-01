@@ -2,10 +2,7 @@ package main;
 
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
-import dataStructure.OurClass;
-import dataStructure.OurMessageChain;
-import dataStructure.OurMethod;
-import dataStructure.OurVariable;
+import dataStructure.*;
 import fileReader.MyFileReader;
 import visitors.InstanceFieldCollector;
 import visitors.MethodCallCollector;
@@ -16,19 +13,22 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class MsgChainWorker {
-    public static List<OurClass> allClasses;
-    public static List<OurMethod> allMethods;
-    public static List<OurMessageChain> allMsgChains, finalMsgChains;
+    private List<OurClass> allClasses;
+    private List<OurMethod> allMethods;
+    private List<OurMessageChain> allMsgChains, finalMsgChains;
+    private List<Integer> chainDegrees;
+    private Set<Integer> chainDegreeSet;
 
     public MsgChainWorker(){
         allClasses = new ArrayList<>();
         allMethods = new ArrayList<>();
         allMsgChains = new ArrayList<>();
         finalMsgChains = new ArrayList<>();
+        chainDegrees = new ArrayList<>();
+        chainDegreeSet = new LinkedHashSet<>();
     }
 
     public void run(){
@@ -43,12 +43,43 @@ public class MsgChainWorker {
         }
 
         for(OurMessageChain msgChain: allMsgChains){
-            OurMessageChain newMsgChain = refactorMsgChain(msgChain);
-            if(newMsgChain != null)
-                finalMsgChains.add(newMsgChain);
+            refactorMsgChain(msgChain);
         }
 
+        classifyMessageChains();
+
         printOutput();
+    }
+
+    private void classifyMessageChains() {
+        chainDegrees.addAll(chainDegreeSet);
+        Collections.sort(chainDegrees);
+
+        int lowLimit=chainDegrees.get(0), highLimit;
+        if(chainDegrees.size()>3){
+            int lowIndex = (int) Math.floor(chainDegrees.size() * 0.25);
+            int highIndex = (int) Math.ceil(chainDegrees.size() * 0.75);
+
+            lowLimit = chainDegrees.get(lowIndex);
+            highLimit = chainDegrees.get(highIndex);
+        } else if(chainDegrees.size()==3){
+            highLimit=chainDegrees.get(2);
+        } else if(chainDegrees.size()==2){
+            highLimit=chainDegrees.get(1)+1;
+        } else {
+            lowLimit--;
+            highLimit=chainDegrees.get(0)+1;
+        }
+
+        for(OurMessageChain msgChain: finalMsgChains){
+            if(msgChain.getDegree()<=lowLimit)
+                msgChain.setChainCategory(ChainCategory.LOW);
+            else if(msgChain.getDegree()>=highLimit)
+                msgChain.setChainCategory(ChainCategory.HIGH);
+            else
+                msgChain.setChainCategory(ChainCategory.MEDIUM);
+        }
+
     }
 
     public void detectMessageChains(List<String> filePaths) throws FileNotFoundException {
@@ -88,6 +119,7 @@ public class MsgChainWorker {
             out.println("Following are the Message Chains and their respective refactoring suggestion:");
 
             int i=1;
+            Collections.sort(finalMsgChains);
             for(OurMessageChain msgChain: finalMsgChains){
                 out.println("\n----------------------------------\n" + i++ + ". " + msgChain + "\n-----\n");
                 out.print(msgChain.getTextModification());
@@ -101,7 +133,7 @@ public class MsgChainWorker {
 
     }
 
-    private OurMessageChain refactorMsgChain(OurMessageChain msgChain) {
+    private void refactorMsgChain(OurMessageChain msgChain) {
         OurMethod parentMethod = msgChain.getContainerMethod();
         OurClass currClass = parentMethod.getParentClass();
 
@@ -145,9 +177,10 @@ public class MsgChainWorker {
             }
         }
 
-        if(msgChain.getTextModification().isEmpty())
-            return null;
-        return msgChain;
+        if(!msgChain.getTextModification().isEmpty()){
+            finalMsgChains.add(msgChain);
+            chainDegreeSet.add(msgChain.getDegree());
+        }
     }
 
     private String getNewMethodName(int index, String[] chainElements, OurMessageChain msgChain) {
