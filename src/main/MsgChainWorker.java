@@ -55,6 +55,26 @@ public class MsgChainWorker {
         chainDegrees.addAll(chainDegreeSet);
         Collections.sort(chainDegrees);
 
+        int[] ranges = getCategoryRanges();
+        int lowRange = ranges[0], highRange = ranges[1];
+
+
+        for(OurMessageChain msgChain: finalMsgChains){
+            addCategoryToMsgChain(lowRange, highRange, msgChain);
+        }
+
+    }
+
+    private void addCategoryToMsgChain(int lowRange, int highRange, OurMessageChain msgChain) {
+        if(msgChain.getDegree()<=lowRange)
+            msgChain.setChainCategory(ChainCategory.LOW);
+        else if(msgChain.getDegree()>=highRange)
+            msgChain.setChainCategory(ChainCategory.HIGH);
+        else
+            msgChain.setChainCategory(ChainCategory.MEDIUM);
+    }
+
+    private int[] getCategoryRanges(){
         int lowLimit=chainDegrees.get(0), highLimit;
         if(chainDegrees.size()>3){
             int lowIndex = (int) Math.floor(chainDegrees.size() * 0.25);
@@ -71,15 +91,7 @@ public class MsgChainWorker {
             highLimit=chainDegrees.get(0)+1;
         }
 
-        for(OurMessageChain msgChain: finalMsgChains){
-            if(msgChain.getDegree()<=lowLimit)
-                msgChain.setChainCategory(ChainCategory.LOW);
-            else if(msgChain.getDegree()>=highLimit)
-                msgChain.setChainCategory(ChainCategory.HIGH);
-            else
-                msgChain.setChainCategory(ChainCategory.MEDIUM);
-        }
-
+        return new int[]{lowLimit, highLimit};
     }
 
     public void detectMessageChains(List<String> filePaths) throws FileNotFoundException {
