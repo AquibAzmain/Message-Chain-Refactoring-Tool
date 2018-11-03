@@ -1,0 +1,27 @@
+There are 1 Message Chains in this project
+Following are the Message Chains and their respective refactoring suggestion:
+
+----------------------------------
+1. OurMessageChain{ c.getGroups().iterator(), degree= 2, category= MEDIUM, containerMethod= receiveConfig(), containerClass= JaimTest}
+-----
+
+public class JaimTest{
+...
+	private void receiveConfig(){
+	...
+		... c.groupsIterator();
+	...
+	}
+...
+}
+
+public class JaimConnection{
+...
+	public void groupsIterator(){
+	...
+		... getGroups().iterator();
+	...
+	}
+...
+}
+
