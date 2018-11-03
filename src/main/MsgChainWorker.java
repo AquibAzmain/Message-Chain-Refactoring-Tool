@@ -11,8 +11,6 @@ import visitors.VariableCollector;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
 import java.util.*;
 
 public class MsgChainWorker {
@@ -31,10 +29,9 @@ public class MsgChainWorker {
         chainDegreeSet = new LinkedHashSet<>();
     }
 
-    public void run(){
-        ArrayList<String> fileList;
+    public List<OurMessageChain> run(String projectPath){
         MyFileReader myFileReader = new MyFileReader();
-        fileList = myFileReader.manageFileReader();
+        List<String> fileList = myFileReader.manageFileReader(projectPath);
 
         try {
             detectMessageChains(fileList);
@@ -46,9 +43,10 @@ public class MsgChainWorker {
             refactorMsgChain(msgChain);
         }
 
-        classifyMessageChains();
+        if(finalMsgChains.size()>0)
+            classifyMessageChains();
 
-        printOutput();
+        return finalMsgChains;
     }
 
     private void classifyMessageChains() {
@@ -120,29 +118,6 @@ public class MsgChainWorker {
         ourClass.setCompilationUnit(getCompilationUnitFromFile(filePath));
 
         allClasses.add(ourClass);
-    }
-
-    private void printOutput() {
-        try {
-            PrintStream out = new PrintStream(new FileOutputStream(
-                    "OutFile.txt"));
-
-            out.println("There are " + finalMsgChains.size() + " Message Chains in this project");
-            out.println("Following are the Message Chains and their respective refactoring suggestion:");
-
-            int i=1;
-            Collections.sort(finalMsgChains);
-            for(OurMessageChain msgChain: finalMsgChains){
-                out.println("\n----------------------------------\n" + i++ + ". " + msgChain + "\n-----\n");
-                out.print(msgChain.getTextModification());
-            }
-
-            out.close();
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
     }
 
     private void refactorMsgChain(OurMessageChain msgChain) {

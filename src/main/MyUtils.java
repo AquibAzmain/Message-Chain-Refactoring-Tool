@@ -50,4 +50,9 @@ public class MyUtils {
             return name;
         }
     }
+
+    public static void exitWithInvalidFilePath() {
+        System.err.println("Invalid path provided");
+        System.exit(0);
+    }
 }
