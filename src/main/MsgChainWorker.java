@@ -33,12 +33,14 @@ public class MsgChainWorker {
         MyFileReader myFileReader = new MyFileReader();
         List<String> fileList = myFileReader.manageFileReader(projectPath);
 
+        System.out.println("<<<<----- Detection ---->>>>");
         try {
             detectMessageChains(fileList);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
+        System.out.println("<<<<----- Refactor ---->>>>");
         for(OurMessageChain msgChain: allMsgChains){
             refactorMsgChain(msgChain);
         }
@@ -93,15 +95,18 @@ public class MsgChainWorker {
     }
 
     public void detectMessageChains(List<String> filePaths) throws FileNotFoundException {
+        System.out.println("<<<<----- populate classes ---->>>>");
         for(String filePath: filePaths){
             populateClasses(filePath);
         }
 
+        System.out.println("<<<<----- populate methods ---->>>>");
         for(OurClass currClass: allClasses){
             populateMethods(currClass);
             populateInstanceVariables(currClass);
         }
 
+        System.out.println("<<<<----- populate message chains ---->>>>");
         for(OurMethod currMethod: allMethods){
             populateMethodVariables(currMethod);
             populateMessageChains(currMethod);

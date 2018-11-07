@@ -34,14 +34,20 @@ public class MsgChainTool {
         List<OurProject> ourProjects = new ArrayList<>();
 
         for(String path: projectPaths){
+            String[] splitPath = splitProjectPath(path);
+
             MsgChainWorker msgChainWorker = new MsgChainWorker();
-            List<OurMessageChain> msgChains = msgChainWorker.run(path);
-            ourProjects.add(new OurProject(getProjectNameFromPath(path), msgChains));
+            List<OurMessageChain> msgChains = msgChainWorker.run(splitPath[1]);
+
+            OurProject newProject = new OurProject(splitPath[0], msgChains);
+            ourProjects.add(newProject);
+
+            System.out.println("Scanning completed for project " + newProject.getName());
         }
 
         int num = 1;
         for(OurProject ourProject: ourProjects){
-            printOutput(ourProject.getMsgChains(), "OutFile" + num);
+            printOutput(ourProject.getMsgChains(), ourProject.getName(), "OutFile" + num);
             num++;
         }
 
@@ -52,8 +58,8 @@ public class MsgChainTool {
         }
     }
 
-    private String getProjectNameFromPath(String path) {
-        return new File(path).getName();
+    private String[] splitProjectPath(String path) {
+        return path.split(" -:- ");
     }
 
     public void outputProjectStats(List<OurProject> ourProjects) throws IOException{
@@ -74,6 +80,7 @@ public class MsgChainTool {
     private List<String> getMultipleProjectPaths() {
         List<String> paths = new ArrayList<>();
 
+        System.out.println("Enter projects. Format: <Project name> -:- <Project path>");
         System.out.println("<enter 'q' to stop>");
 
         String path = "";
@@ -106,17 +113,21 @@ public class MsgChainTool {
     private void runSingleProject() {
         String projectPath = getProjectPath();
 
-        if(projectPath == null || projectPath.trim().isEmpty() || !isValidPath(projectPath))
+        String filePath = splitProjectPath(projectPath)[1];
+        String projectName = splitProjectPath(projectPath)[0];
+
+        if(filePath == null || filePath.trim().isEmpty() || !isValidPath(filePath))
             MyUtils.exitWithInvalidFilePath();
 
         MsgChainWorker msgChainWorker = new MsgChainWorker();
-        List<OurMessageChain> msgChains = msgChainWorker.run(projectPath);
+        List<OurMessageChain> msgChains = msgChainWorker.run(filePath);
 
-        printOutput(msgChains, "OutFile");
+        printOutput(msgChains, projectName, "OutFile");
     }
 
     private String getProjectPath() {
-        System.out.println("Enter Project Path:");
+        System.out.println("Enter project. Format: <Project name> -:- <Project path>");
+
         String path = null;
         try {
             path = reader.readLine();
@@ -143,12 +154,12 @@ public class MsgChainTool {
     }
 
 
-    private void printOutput(List<OurMessageChain> messageChains, final String fileName) {
+    private void printOutput(List<OurMessageChain> messageChains, String projectName, final String outputFileName) {
         try {
             PrintStream out = new PrintStream(new FileOutputStream(
-                    fileName + ".txt"));
+                    outputFileName + ".txt"));
 
-            out.println("There are " + messageChains.size() + " Message Chains in this project");
+            out.println("There are " + messageChains.size() + " Message Chains in project " + projectName);
             out.println("Following are the Message Chains and their respective refactoring suggestion:");
 
             int i=1;

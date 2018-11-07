@@ -12,10 +12,10 @@ public class MyFileReader {
 
 		try {
 			for (File fileEntry : folder.listFiles()) {
-				if (fileEntry.isDirectory()) {
+				if (fileEntry.isDirectory() && !fileEntry.getName().contains("test")) {
 					fileList.addAll(listFilesForFolder(fileEntry));
 				} else {
-					if(fileEntry.getAbsolutePath().contains(".java")){
+					if(fileEntry.getAbsolutePath().endsWith(".java") && !fileEntry.getAbsolutePath().contains("Test")){
 						fileList.add(fileEntry.getAbsolutePath());
 					}
 				}

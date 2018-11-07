@@ -1,81 +1,31 @@
-There are 9 Message Chains in this project
+There are 6 Message Chains in this project
 Following are the Message Chains and their respective refactoring suggestion:
 
 ----------------------------------
-1. OurMessageChain{ b.getC(a).getD().runD(), degree= 3, category= MEDIUM, containerMethod= runA(), containerClass= A}
+1. OurMessageChain{ currMethod.getParentClass().getName().equals(vd.getTypeAsString()), degree= 3, category= MEDIUM, containerMethod= visit(), containerClass= CBORFCCalculation}
 -----
 
-public class A{
+public class CBORFCCalculation{
 ...
-	protected void runA(String a){
+	public void visit(VariableDeclarator vd, List<OurVariable> collector){
 	...
-		... b.cDRunD();
-	...
-	}
-...
-}
-
-public class B{
-...
-	public void cDRunD(){
-	...
-		... getC(a).dRunD();
-	...
-	}
-...
-}
-
-public class C{
-...
-	public void dRunD(){
-	...
-		... getD().runD();
-	...
-	}
-...
-}
-
-
-----------------------------------
-2. OurMessageChain{ a.getB().runB(), degree= 2, category= LOW, containerMethod= runD(), containerClass= D}
------
-
-public class D{
-...
-	void runD(){
-	...
-		... a.bRunB();
-	...
-	}
-...
-}
-
-public class A{
-...
-	public void bRunB(){
-	...
-		... getB().runB();
-	...
-	}
-...
-}
-
-
-----------------------------------
-3. OurMessageChain{ currMethod.getName().equals(getSkimmedMethodName(chainElement)), degree= 2, category= LOW, containerMethod= isInnerMethod(), containerClass= MsgChainWorker}
------
-
-public class MsgChainWorker{
-...
-	private boolean isInnerMethod(OurClass currClass, String chainElement){
-	...
-		... currMethod.nameEquals();
+		... currMethod.parentClassNameEquals();
 	...
 	}
 ...
 }
 
 public class OurMethod{
+...
+	public void parentClassNameEquals(){
+	...
+		... getParentClass().nameEquals();
+	...
+	}
+...
+}
+
+public class OurClass{
 ...
 	public void nameEquals(){
 	...
@@ -87,62 +37,12 @@ public class OurMethod{
 
 
 ----------------------------------
-4. OurMessageChain{ currMethod.getName().equals(getSkimmedMethodName(chainElement)), degree= 2, category= LOW, containerMethod= getTypeFromMethod(), containerClass= MsgChainWorker}
+2. OurMessageChain{ aClass.getName().equals(vd.getTypeAsString()), degree= 2, category= LOW, containerMethod= visit(), containerClass= CBORFCCalculation}
 -----
 
-public class MsgChainWorker{
+public class CBORFCCalculation{
 ...
-	private OurClass getTypeFromMethod(String chainElement, OurClass currClass){
-	...
-		... currMethod.nameEquals();
-	...
-	}
-...
-}
-
-public class OurMethod{
-...
-	public void nameEquals(){
-	...
-		... getName().equals();
-	...
-	}
-...
-}
-
-
-----------------------------------
-5. OurMessageChain{ currMethod.getName().equals(getSkimmedMethodName(chainElement)), degree= 2, category= LOW, containerMethod= getTypeStringFromMethod(), containerClass= MsgChainWorker}
------
-
-public class MsgChainWorker{
-...
-	private String getTypeStringFromMethod(String chainElement, OurClass currClass){
-	...
-		... currMethod.nameEquals();
-	...
-	}
-...
-}
-
-public class OurMethod{
-...
-	public void nameEquals(){
-	...
-		... getName().equals();
-	...
-	}
-...
-}
-
-
-----------------------------------
-6. OurMessageChain{ aClass.getName().equals(vd.getTypeAsString()), degree= 2, category= LOW, containerMethod= visit(), containerClass= InstanceFieldCollector}
------
-
-public class InstanceFieldCollector{
-...
-	public void visit(FieldDeclaration fd, List<OurVariable> collector){
+	public void visit(VariableDeclarator vd, List<OurVariable> collector){
 	...
 		... aClass.nameEquals();
 	...
@@ -162,24 +62,24 @@ public class OurClass{
 
 
 ----------------------------------
-7. OurMessageChain{ currMethod.getParentClass().getFields(), degree= 2, category= LOW, containerMethod= isVariable(), containerClass= MethodCallCollector}
+3. OurMessageChain{ variable.getType().addCoupledClass(currClass), degree= 2, category= LOW, containerMethod= visit(), containerClass= CBORFCCalculation}
 -----
 
-public class MethodCallCollector{
+public class CBORFCCalculation{
 ...
-	private boolean isVariable(String scope){
+	public void visit(MethodCallExpr mce, OurMethod currMethod){
 	...
-		... currMethod.parentClassFields();
+		... variable.typeAddCoupledClass();
 	...
 	}
 ...
 }
 
-public class OurMethod{
+public class OurVariable{
 ...
-	public List<OurVariable> parentClassFields(){
+	public void typeAddCoupledClass(){
 	...
-		... getParentClass().getFields();
+		... getType().addCoupledClass();
 	...
 	}
 ...
@@ -187,14 +87,39 @@ public class OurMethod{
 
 
 ----------------------------------
-8. OurMessageChain{ clazz.getName().equals(type), degree= 2, category= LOW, containerMethod= findType(), containerClass= MethodNameCollector}
+4. OurMessageChain{ method.getName().equals(methodName), degree= 2, category= LOW, containerMethod= getExternalMethod(), containerClass= CBORFCCalculation}
 -----
 
-public class MethodNameCollector{
+public class CBORFCCalculation{
 ...
-	private OurClass findType(MethodDeclaration md){
+	private OurMethod getExternalMethod(OurClass ourClass, String methodName){
 	...
-		... clazz.nameEquals();
+		... method.nameEquals();
+	...
+	}
+...
+}
+
+public class OurMethod{
+...
+	public void nameEquals(){
+	...
+		... getName().equals();
+	...
+	}
+...
+}
+
+
+----------------------------------
+5. OurMessageChain{ currClass.getName().equals(vd.getTypeAsString()), degree= 2, category= LOW, containerMethod= visit(), containerClass= Populator}
+-----
+
+public class Populator{
+...
+	public void visit(FieldDeclaration fd, List<OurVariable> collector){
+	...
+		... currClass.nameEquals();
 	...
 	}
 ...
@@ -212,12 +137,12 @@ public class OurClass{
 
 
 ----------------------------------
-9. OurMessageChain{ aClass.getName().equals(vd.getTypeAsString()), degree= 2, category= LOW, containerMethod= visit(), containerClass= VariableCollector}
+6. OurMessageChain{ aClass.getName().equals(vd.getTypeAsString()), degree= 2, category= LOW, containerMethod= visit(), containerClass= Populator}
 -----
 
-public class VariableCollector{
+public class Populator{
 ...
-	public void visit(VariableDeclarator vd, List<OurVariable> collector){
+	public void visit(FieldDeclaration fd, List<OurVariable> collector){
 	...
 		... aClass.nameEquals();
 	...

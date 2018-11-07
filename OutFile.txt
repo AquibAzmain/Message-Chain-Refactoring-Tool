@@ -1,25 +1,25 @@
-There are 1 Message Chains in this project
+There are 1 Message Chains in project tink
 Following are the Message Chains and their respective refactoring suggestion:
 
 ----------------------------------
-1. OurMessageChain{ c.getGroups().iterator(), degree= 2, category= MEDIUM, containerMethod= receiveConfig(), containerClass= JaimTest}
+1. OurMessageChain{ instance.getUrl().equals(keysUrl), degree= 2, category= MEDIUM, containerMethod= build(), containerClass= GooglePaymentsPublicKeysManager}
 -----
 
-public class JaimTest{
+public class GooglePaymentsPublicKeysManager{
 ...
-	private void receiveConfig(){
+	public GooglePaymentsPublicKeysManager build(){
 	...
-		... c.groupsIterator();
+		... instance.urlEquals();
 	...
 	}
 ...
 }
 
-public class JaimConnection{
+public class GooglePaymentsPublicKeysManager{
 ...
-	public void groupsIterator(){
+	public void urlEquals(){
 	...
-		... getGroups().iterator();
+		... getUrl().equals();
 	...
 	}
 ...
