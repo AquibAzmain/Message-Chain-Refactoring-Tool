@@ -143,6 +143,9 @@ public class MsgChainWorker {
                     nextClass = getTypeFromMethod(chainElement, currClass);
                 }
 
+                if(nextClass == null)
+                    break;
+
                 if(!isInnerMethod(nextClass, chainElements[i+1])){
                     break;
                 }
@@ -161,11 +164,11 @@ public class MsgChainWorker {
             }
             else{
                 OurClass currMethodType = getTypeFromMethod(chainElement, currClass);
-                String enderMethodType = "void";
+                String tailMethodType = "void";
 
                 if(!(currMethodType == null))
-                    enderMethodType = getTypeStringFromMethod(msgChain.getChainEnder(), currMethodType);
-                msgChain.setTextModification(msgChain.getTextModification().replace(".1", enderMethodType));
+                    tailMethodType = getTypeStringFromMethod(msgChain.getChainEnder(), currMethodType);
+                msgChain.setTextModification(msgChain.getTextModification().replace(".1", tailMethodType));
             }
         }
 

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89a672a1-24ab-49d2-968b-e0114dcbe626" name="Default Changelist" comment="output to txt file">
+    <list default="true" id="89a672a1-24ab-49d2-968b-e0114dcbe626" name="Default Changelist" comment="input project name with path">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OutFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OutFile.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OutFile1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OutFile1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OutFile2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OutFile2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Message Chain Refactoring Tool/dataStructure/OurMessageChain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Message Chain Refactoring Tool/dataStructure/OurMessageChain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Message Chain Refactoring Tool/fileReader/MyFileReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Message Chain Refactoring Tool/fileReader/MyFileReader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_stats.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project_stats.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileReader/MyFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileReader/MyFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MsgChainTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MsgChainTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/OurProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/OurProject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/MsgChainWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MsgChainWorker.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -71,26 +70,26 @@
     <session id="-2083786675">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="539" />
-          <entry key="txt" value="1" />
+          <entry key="java" value="703" />
+          <entry key="txt" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="539" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="JAVA" value="703" />
+          <entry key="PLAIN_TEXT" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="1" />
-          <entry key="txt" value="1" />
+          <entry key="java" value="4" />
+          <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="JAVA" value="4" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -104,11 +103,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/MsgChainWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="116" column="42" selection-start-line="116" selection-start-column="42" selection-end-line="116" selection-end-column="42" />
+            <state relative-caret-position="199">
+              <caret line="149" column="26" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -125,8 +124,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OutFile.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" lean-forward="true" selection-start-column="9" selection-end-column="10" />
+            <state relative-caret-position="17">
+              <caret line="1" column="77" lean-forward="true" selection-start-line="1" selection-start-column="77" selection-end-line="1" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dataStructure/OurMethod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="49" column="19" lean-forward="true" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+              <folding>
+                <element signature="e#1142#1143#0" expanded="true" />
+                <element signature="e#1176#1177#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dataStructure/OurMessageChain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="952">
+              <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dataStructure/OurProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="46" column="64" selection-start-line="46" selection-start-column="64" selection-end-line="46" selection-end-column="64" />
+              <folding>
+                <element signature="e#1907#1908#0" expanded="true" />
+                <element signature="e#1943#1944#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,8 +168,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/MsgChainTool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="116" column="62" selection-start-line="116" selection-start-column="62" selection-end-line="116" selection-end-column="62" />
+            <state relative-caret-position="196">
+              <caret line="73" column="37" lean-forward="true" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1664#1665#0" expanded="true" />
@@ -148,8 +182,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/visitors/MethodCallCollector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
+            <state relative-caret-position="61">
+              <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,12 +245,12 @@
         <option value="$PROJECT_DIR$/src/visitors/MethodCallCollector.java" />
         <option value="$PROJECT_DIR$/src/dataStructure/OurMessageChain.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/dataStructure/OurProject.java" />
         <option value="$PROJECT_DIR$/src/main/MyUtils.java" />
         <option value="$PROJECT_DIR$/OutFile.txt" />
         <option value="$PROJECT_DIR$/src/main/MsgChainTool.java" />
         <option value="$PROJECT_DIR$/src/fileReader/MyFileReader.java" />
         <option value="$PROJECT_DIR$/src/main/MsgChainWorker.java" />
+        <option value="$PROJECT_DIR$/src/dataStructure/OurProject.java" />
       </list>
     </option>
   </component>
@@ -285,7 +319,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541585462070" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541592449129" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/External_Jars/javaparser-core-3.6.20.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -415,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541109896318</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="input project name with path">
+      <created>1541585613465</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1541585613465</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -442,7 +483,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31967214" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.50491804" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5886525" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -477,7 +518,8 @@
     <MESSAGE value="method naming rectified" />
     <MESSAGE value="message chain categorization enabled" />
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
+    <MESSAGE value="input project name with path" />
+    <option name="LAST_COMMIT_MESSAGE" value="input project name with path" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/visitors/InstanceFieldCollector.java">
@@ -551,24 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataStructure/OurMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="49" column="19" lean-forward="true" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-          <folding>
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataStructure/OurMessageChain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dataStructure/ChainCategory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -578,13 +602,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project_stats.csv">
       <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataStructure/OurProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -612,16 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/visitors/MethodCallCollector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/src/A.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -629,22 +636,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MsgChainTool.java">
+    <entry file="file://$PROJECT_DIR$/src/visitors/MethodCallCollector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="116" column="62" selection-start-line="116" selection-start-column="62" selection-end-line="116" selection-end-column="62" />
+        <state relative-caret-position="61">
+          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1664#1665#0" expanded="true" />
-            <element signature="e#1700#1701#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OutFile.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/MsgChainWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="9" selection-end-column="10" />
+        <state relative-caret-position="199">
+          <caret line="149" column="26" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -655,10 +660,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MsgChainWorker.java">
+    <entry file="file://$PROJECT_DIR$/src/dataStructure/OurMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="116" column="42" selection-start-line="116" selection-start-column="42" selection-end-line="116" selection-end-column="42" />
+        <state relative-caret-position="34">
+          <caret line="49" column="19" lean-forward="true" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+          <folding>
+            <element signature="e#1142#1143#0" expanded="true" />
+            <element signature="e#1176#1177#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataStructure/OurMessageChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OutFile.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="77" lean-forward="true" selection-start-line="1" selection-start-column="77" selection-end-line="1" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/MsgChainTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="73" column="37" lean-forward="true" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1664#1665#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataStructure/OurProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="46" column="64" selection-start-line="46" selection-start-column="64" selection-end-line="46" selection-end-column="64" />
+          <folding>
+            <element signature="e#1907#1908#0" expanded="true" />
+            <element signature="e#1943#1944#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

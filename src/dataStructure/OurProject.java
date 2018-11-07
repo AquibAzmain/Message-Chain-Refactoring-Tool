@@ -7,7 +7,7 @@ public class OurProject {
     private List<OurMessageChain> msgChains;
     private int chainNumber;
     private int maxChainDegree;
-    private int averageDegree;
+    private double averageDegree;
 
     public OurProject(String name, List<OurMessageChain> msgChains) {
         this.name = name;
@@ -41,7 +41,7 @@ public class OurProject {
             totalDegree+=degree;
         }
 
-        averageDegree = (int) totalDegree/chainNumber;
+        averageDegree = (double) totalDegree/ (double) chainNumber;
     }
 
 
@@ -80,11 +80,11 @@ public class OurProject {
         this.maxChainDegree = maxChainDegree;
     }
 
-    public int getAverageDegree() {
+    public double getAverageDegree() {
         return averageDegree;
     }
 
-    public void setAverageDegree(int averageDegree) {
+    public void setAverageDegree(double averageDegree) {
         this.averageDegree = averageDegree;
     }
 }
