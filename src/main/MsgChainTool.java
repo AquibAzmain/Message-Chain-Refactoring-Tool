@@ -36,13 +36,15 @@ public class MsgChainTool {
         for(String path: projectPaths){
             String[] splitPath = splitProjectPath(path);
 
+            System.out.println("Scanning completed for project " + splitPath[0]);
+
             MsgChainWorker msgChainWorker = new MsgChainWorker();
             List<OurMessageChain> msgChains = msgChainWorker.run(splitPath[1]);
 
             OurProject newProject = new OurProject(splitPath[0], msgChains);
             ourProjects.add(newProject);
 
-            System.out.println("Scanning completed for project " + newProject.getName());
+            System.out.println("Scanning completed for project " + newProject.getName() + "\n");
         }
 
         int num = 1;

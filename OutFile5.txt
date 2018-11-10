@@ -1,4 +1,4 @@
-There are 45 Message Chains in project d2410
+There are 47 Message Chains in project d257
 Following are the Message Chains and their respective refactoring suggestion:
 
 ----------------------------------
@@ -67,7 +67,52 @@ public class URL{
 
 
 ----------------------------------
-2. OurMessageChain{ page.getRows().get(0).size(), degree= 3, category= MEDIUM, containerMethod= doPost(), containerClass= PageServlet}
+2. OurMessageChain{ providerUrl.removeParameters(getFilteredKeys(providerUrl)).removeParameter(Constants.MONITOR_KEY).removeParameter(Constants.BIND_IP_KEY).removeParameter(Constants.BIND_PORT_KEY), degree= 4, category= MEDIUM, containerMethod= getRegistedProviderUrl(), containerClass= RegistryProtocol}
+-----
+
+public class RegistryProtocol{
+...
+	private URL getRegistedProviderUrl(final Invoker<?> originInvoker){
+	...
+		... providerUrl.removeParametersRemoveParameterRemoveParameterRemoveParameter();
+	...
+	}
+...
+}
+
+public class URL{
+...
+	public URL removeParametersRemoveParameterRemoveParameterRemoveParameter(){
+	...
+		... removeParameters(getFilteredKeys(providerUrl)).removeParameterRemoveParameterRemoveParameter();
+	...
+	}
+...
+}
+
+public class URL{
+...
+	public URL removeParameterRemoveParameterRemoveParameter(){
+	...
+		... removeParameter(Constants.MONITOR_KEY).removeParameterRemoveParameter();
+	...
+	}
+...
+}
+
+public class URL{
+...
+	public URL removeParameterRemoveParameter(){
+	...
+		... removeParameter(Constants.BIND_IP_KEY).removeParameter();
+	...
+	}
+...
+}
+
+
+----------------------------------
+3. OurMessageChain{ page.getRows().get(0).size(), degree= 3, category= LOW, containerMethod= doPost(), containerClass= PageServlet}
 -----
 
 public class PageServlet{
@@ -82,7 +127,7 @@ public class PageServlet{
 
 
 ----------------------------------
-3. OurMessageChain{ user.getUsername().length(), degree= 2, category= LOW, containerMethod= invoke(), containerClass= AuthorizationValve}
+4. OurMessageChain{ user.getUsername().length(), degree= 2, category= LOW, containerMethod= invoke(), containerClass= AuthorizationValve}
 -----
 
 public class AuthorizationValve{
@@ -107,7 +152,7 @@ public class User{
 
 
 ----------------------------------
-4. OurMessageChain{ route.getService().isEmpty(), degree= 2, category= LOW, containerMethod= show(), containerClass= Routes}
+5. OurMessageChain{ route.getService().isEmpty(), degree= 2, category= LOW, containerMethod= show(), containerClass= Routes}
 -----
 
 public class Routes{
@@ -132,7 +177,7 @@ public class Route{
 
 
 ----------------------------------
-5. OurMessageChain{ routeRule.getThenCondition().isEmpty(), degree= 2, category= LOW, containerMethod= create(), containerClass= Routes}
+6. OurMessageChain{ routeRule.getThenCondition().isEmpty(), degree= 2, category= LOW, containerMethod= create(), containerClass= Routes}
 -----
 
 public class Routes{
@@ -157,7 +202,7 @@ public class RouteRule{
 
 
 ----------------------------------
-6. OurMessageChain{ routeRule.getThenCondition().get("black"), degree= 2, category= LOW, containerMethod= update(), containerClass= Routes}
+7. OurMessageChain{ routeRule.getThenCondition().get("black"), degree= 2, category= LOW, containerMethod= update(), containerClass= Routes}
 -----
 
 public class Routes{
@@ -182,7 +227,7 @@ public class RouteRule{
 
 
 ----------------------------------
-7. OurMessageChain{ result.getThenCondition().isEmpty(), degree= 2, category= LOW, containerMethod= update(), containerClass= Routes}
+8. OurMessageChain{ result.getThenCondition().isEmpty(), degree= 2, category= LOW, containerMethod= update(), containerClass= Routes}
 -----
 
 public class Routes{
@@ -207,12 +252,12 @@ public class RouteRule{
 
 
 ----------------------------------
-8. OurMessageChain{ configuratorUrl.getParameters().entrySet(), degree= 2, category= LOW, containerMethod= configure(), containerClass= AbstractConfigurator}
+9. OurMessageChain{ configuratorUrl.getParameters().entrySet(), degree= 2, category= LOW, containerMethod= configureIfMatch(), containerClass= AbstractConfigurator}
 -----
 
 public class AbstractConfigurator{
 ...
-	public URL configure(URL url){
+	private URL configureIfMatch(String host, URL url){
 	...
 		... configuratorUrl.parametersEntrySet();
 	...
@@ -232,7 +277,7 @@ public class URL{
 
 
 ----------------------------------
-9. OurMessageChain{ router.getUrl().getParameter(Constants.RUNTIME_KEY, true), degree= 2, category= LOW, containerMethod= list(), containerClass= AbstractDirectory}
+10. OurMessageChain{ router.getUrl().getParameter(Constants.RUNTIME_KEY, true), degree= 2, category= LOW, containerMethod= list(), containerClass= AbstractDirectory}
 -----
 
 public class AbstractDirectory{
@@ -257,7 +302,7 @@ public class Router{
 
 
 ----------------------------------
-10. OurMessageChain{ url.toFullString().compareTo(c.url.toFullString()), degree= 2, category= LOW, containerMethod= compareTo(), containerClass= ConditionRouter}
+11. OurMessageChain{ url.toFullString().compareTo(c.url.toFullString()), degree= 2, category= LOW, containerMethod= compareTo(), containerClass= ConditionRouter}
 -----
 
 public class ConditionRouter{
@@ -282,7 +327,7 @@ public class URL{
 
 
 ----------------------------------
-11. OurMessageChain{ log.getLogLevel().equals(expectedLevel), degree= 2, category= LOW, containerMethod= findLevelWithThreadName(), containerClass= LogUtil}
+12. OurMessageChain{ log.getLogLevel().equals(expectedLevel), degree= 2, category= LOW, containerMethod= findLevelWithThreadName(), containerClass= LogUtil}
 -----
 
 public class LogUtil{
@@ -307,7 +352,7 @@ public class Log{
 
 
 ----------------------------------
-12. OurMessageChain{ log.getLogThread().equals(threadName), degree= 2, category= LOW, containerMethod= findLevelWithThreadName(), containerClass= LogUtil}
+13. OurMessageChain{ log.getLogThread().equals(threadName), degree= 2, category= LOW, containerMethod= findLevelWithThreadName(), containerClass= LogUtil}
 -----
 
 public class LogUtil{
@@ -332,7 +377,7 @@ public class Log{
 
 
 ----------------------------------
-13. OurMessageChain{ u.setHost(NetUtils.getLocalHost()).toFullString(), degree= 2, category= LOW, containerMethod= filterLocalHost(), containerClass= NetUtils}
+14. OurMessageChain{ u.setHost(NetUtils.getLocalHost()).toFullString(), degree= 2, category= LOW, containerMethod= filterLocalHost(), containerClass= NetUtils}
 -----
 
 public class NetUtils{
@@ -357,12 +402,12 @@ public class URL{
 
 
 ----------------------------------
-14. OurMessageChain{ url.getPath().length(), degree= 2, category= LOW, containerMethod= createProxy(), containerClass= ReferenceConfig}
+15. OurMessageChain{ url.getPath().length(), degree= 2, category= LOW, containerMethod= createProxy(), containerClass= ReferenceConfig}
 -----
 
 public class ReferenceConfig{
 ...
-	private T createProxy(){
+	private T createProxy(Map<String, String> map){
 	...
 		... url.pathLength();
 	...
@@ -382,7 +427,7 @@ public class URL{
 
 
 ----------------------------------
-15. OurMessageChain{ argument.getType().length(), degree= 2, category= LOW, containerMethod= doExportUrlsFor1Protocol(), containerClass= ServiceConfig}
+16. OurMessageChain{ argument.getType().length(), degree= 2, category= LOW, containerMethod= doExportUrlsFor1Protocol(), containerClass= ServiceConfig}
 -----
 
 public class ServiceConfig{
@@ -400,31 +445,6 @@ public class ArgumentConfig{
 	public void typeLength(){
 	...
 		... getType().length();
-	...
-	}
-...
-}
-
-
-----------------------------------
-16. OurMessageChain{ config.isDefault().booleanValue(), degree= 2, category= LOW, containerMethod= afterPropertiesSet(), containerClass= ReferenceBean}
------
-
-public class ReferenceBean{
-...
-	public void afterPropertiesSet() throws Exception{
-	...
-		... config.isDefaultBooleanValue();
-	...
-	}
-...
-}
-
-public class ConsumerConfig{
-...
-	public void isDefaultBooleanValue(){
-	...
-		... isDefault().booleanValue();
 	...
 	}
 ...
@@ -532,10 +552,10 @@ public class ConsumerConfig{
 
 
 ----------------------------------
-21. OurMessageChain{ config.isDefault().booleanValue(), degree= 2, category= LOW, containerMethod= afterPropertiesSet(), containerClass= ServiceBean}
+21. OurMessageChain{ config.isDefault().booleanValue(), degree= 2, category= LOW, containerMethod= afterPropertiesSet(), containerClass= ReferenceBean}
 -----
 
-public class ServiceBean{
+public class ReferenceBean{
 ...
 	public void afterPropertiesSet() throws Exception{
 	...
@@ -545,7 +565,7 @@ public class ServiceBean{
 ...
 }
 
-public class ProviderConfig{
+public class ConsumerConfig{
 ...
 	public void isDefaultBooleanValue(){
 	...
@@ -707,7 +727,32 @@ public class ProviderConfig{
 
 
 ----------------------------------
-28. OurMessageChain{ page.getRows().size(), degree= 2, category= LOW, containerMethod= doPost(), containerClass= PageServlet}
+28. OurMessageChain{ config.isDefault().booleanValue(), degree= 2, category= LOW, containerMethod= afterPropertiesSet(), containerClass= ServiceBean}
+-----
+
+public class ServiceBean{
+...
+	public void afterPropertiesSet() throws Exception{
+	...
+		... config.isDefaultBooleanValue();
+	...
+	}
+...
+}
+
+public class ProviderConfig{
+...
+	public void isDefaultBooleanValue(){
+	...
+		... isDefault().booleanValue();
+	...
+	}
+...
+}
+
+
+----------------------------------
+29. OurMessageChain{ page.getRows().size(), degree= 2, category= LOW, containerMethod= doPost(), containerClass= PageServlet}
 -----
 
 public class PageServlet{
@@ -732,7 +777,32 @@ public class Page{
 
 
 ----------------------------------
-29. OurMessageChain{ statistics.getUrl().addParameters(MonitorService.TIMESTAMP, timestamp, MonitorService.SUCCESS, String.valueOf(success), MonitorService.FAILURE, String.valueOf(failure), MonitorService.INPUT, String.valueOf(input), MonitorService.OUTPUT, String.valueOf(output), MonitorService.ELAPSED, String.valueOf(elapsed), MonitorService.CONCURRENT, String.valueOf(concurrent), MonitorService.MAX_INPUT, String.valueOf(maxInput), MonitorService.MAX_OUTPUT, String.valueOf(maxOutput), MonitorService.MAX_ELAPSED, String.valueOf(maxElapsed), MonitorService.MAX_CONCURRENT, String.valueOf(maxConcurrent)), degree= 2, category= LOW, containerMethod= send(), containerClass= DubboMonitor}
+30. OurMessageChain{ url.setPath(MonitorService.class.getName()).addParameter(Constants.INTERFACE_KEY, MonitorService.class.getName()), degree= 2, category= LOW, containerMethod= getMonitor(), containerClass= AbstractMonitorFactory}
+-----
+
+public class AbstractMonitorFactory{
+...
+	public Monitor getMonitor(URL url){
+	...
+		... url.setPathAddParameter();
+	...
+	}
+...
+}
+
+public class URL{
+...
+	public URL setPathAddParameter(){
+	...
+		... setPath(MonitorService.class.getName()).addParameter();
+	...
+	}
+...
+}
+
+
+----------------------------------
+31. OurMessageChain{ statistics.getUrl().addParameters(MonitorService.TIMESTAMP, timestamp, MonitorService.SUCCESS, String.valueOf(success), MonitorService.FAILURE, String.valueOf(failure), MonitorService.INPUT, String.valueOf(input), MonitorService.OUTPUT, String.valueOf(output), MonitorService.ELAPSED, String.valueOf(elapsed), MonitorService.CONCURRENT, String.valueOf(concurrent), MonitorService.MAX_INPUT, String.valueOf(maxInput), MonitorService.MAX_OUTPUT, String.valueOf(maxOutput), MonitorService.MAX_ELAPSED, String.valueOf(maxElapsed), MonitorService.MAX_CONCURRENT, String.valueOf(maxConcurrent)), degree= 2, category= LOW, containerMethod= send(), containerClass= DubboMonitor}
 -----
 
 public class DubboMonitor{
@@ -757,7 +827,7 @@ public class Statistics{
 
 
 ----------------------------------
-30. OurMessageChain{ providerUrl.getProtocol().equals(acceptProtocol), degree= 2, category= LOW, containerMethod= toInvokers(), containerClass= RegistryDirectory}
+32. OurMessageChain{ providerUrl.getProtocol().equals(acceptProtocol), degree= 2, category= LOW, containerMethod= toInvokers(), containerClass= RegistryDirectory}
 -----
 
 public class RegistryDirectory{
@@ -782,7 +852,7 @@ public class URL{
 
 
 ----------------------------------
-31. OurMessageChain{ providerUrl.getPath().length(), degree= 2, category= LOW, containerMethod= mergeUrl(), containerClass= RegistryDirectory}
+33. OurMessageChain{ providerUrl.getPath().length(), degree= 2, category= LOW, containerMethod= mergeUrl(), containerClass= RegistryDirectory}
 -----
 
 public class RegistryDirectory{
@@ -807,7 +877,7 @@ public class URL{
 
 
 ----------------------------------
-32. OurMessageChain{ router.getUrl().getParameter(Constants.RUNTIME_KEY, true), degree= 2, category= LOW, containerMethod= route(), containerClass= RegistryDirectory}
+34. OurMessageChain{ router.getUrl().getParameter(Constants.RUNTIME_KEY, true), degree= 2, category= LOW, containerMethod= route(), containerClass= RegistryDirectory}
 -----
 
 public class RegistryDirectory{
@@ -832,7 +902,7 @@ public class Router{
 
 
 ----------------------------------
-33. OurMessageChain{ registryUrl.setProtocol(protocol).removeParameter(Constants.REGISTRY_KEY), degree= 2, category= LOW, containerMethod= getRegistry(), containerClass= RegistryProtocol}
+35. OurMessageChain{ registryUrl.setProtocol(protocol).removeParameter(Constants.REGISTRY_KEY), degree= 2, category= LOW, containerMethod= getRegistry(), containerClass= RegistryProtocol}
 -----
 
 public class RegistryProtocol{
@@ -857,32 +927,7 @@ public class URL{
 
 
 ----------------------------------
-34. OurMessageChain{ providerUrl.removeParameters(getFilteredKeys(providerUrl)).removeParameter(Constants.MONITOR_KEY), degree= 2, category= LOW, containerMethod= getRegistedProviderUrl(), containerClass= RegistryProtocol}
------
-
-public class RegistryProtocol{
-...
-	private URL getRegistedProviderUrl(final Invoker<?> originInvoker){
-	...
-		... providerUrl.removeParametersRemoveParameter();
-	...
-	}
-...
-}
-
-public class URL{
-...
-	public URL removeParametersRemoveParameter(){
-	...
-		... removeParameters(getFilteredKeys(providerUrl)).removeParameter();
-	...
-	}
-...
-}
-
-
-----------------------------------
-35. OurMessageChain{ providerUrl.removeParameters("dynamic", "enabled").toFullString(), degree= 2, category= LOW, containerMethod= getCacheKey(), containerClass= RegistryProtocol}
+36. OurMessageChain{ providerUrl.removeParameters("dynamic", "enabled").toFullString(), degree= 2, category= LOW, containerMethod= getCacheKey(), containerClass= RegistryProtocol}
 -----
 
 public class RegistryProtocol{
@@ -907,7 +952,7 @@ public class URL{
 
 
 ----------------------------------
-36. OurMessageChain{ r.getUrl().getAddress(), degree= 2, category= LOW, containerMethod= handle(), containerClass= RegisteredPageHandler}
+37. OurMessageChain{ r.getUrl().getAddress(), degree= 2, category= LOW, containerMethod= handle(), containerClass= RegisteredPageHandler}
 -----
 
 public class RegisteredPageHandler{
@@ -932,7 +977,7 @@ public class Registry{
 
 
 ----------------------------------
-37. OurMessageChain{ registry.getUrl().getAddress(), degree= 2, category= LOW, containerMethod= handle(), containerClass= RegistriesPageHandler}
+38. OurMessageChain{ registry.getUrl().getAddress(), degree= 2, category= LOW, containerMethod= handle(), containerClass= RegistriesPageHandler}
 -----
 
 public class RegistriesPageHandler{
@@ -957,7 +1002,7 @@ public class Registry{
 
 
 ----------------------------------
-38. OurMessageChain{ r.getUrl().getAddress(), degree= 2, category= LOW, containerMethod= handle(), containerClass= SubscribedPageHandler}
+39. OurMessageChain{ r.getUrl().getAddress(), degree= 2, category= LOW, containerMethod= handle(), containerClass= SubscribedPageHandler}
 -----
 
 public class SubscribedPageHandler{
@@ -982,7 +1027,7 @@ public class Registry{
 
 
 ----------------------------------
-39. OurMessageChain{ url.getIp().equals(host), degree= 2, category= LOW, containerMethod= getExchangeChannel(), containerClass= ExchangeServerPeer}
+40. OurMessageChain{ url.getIp().equals(host), degree= 2, category= LOW, containerMethod= getExchangeChannel(), containerClass= ExchangeServerPeer}
 -----
 
 public class ExchangeServerPeer{
@@ -1007,7 +1052,7 @@ public class URL{
 
 
 ----------------------------------
-40. OurMessageChain{ url.getIp().equals(host), degree= 2, category= LOW, containerMethod= getChannel(), containerClass= ServerPeer}
+41. OurMessageChain{ url.getIp().equals(host), degree= 2, category= LOW, containerMethod= getChannel(), containerClass= ServerPeer}
 -----
 
 public class ServerPeer{
@@ -1032,7 +1077,7 @@ public class URL{
 
 
 ----------------------------------
-41. OurMessageChain{ referurl.addParametersIfAbsent(url.getParameters()).removeParameter(Constants.METHODS_KEY), degree= 2, category= LOW, containerMethod= referOrdestroyCallbackService(), containerClass= CallbackServiceCodec}
+42. OurMessageChain{ referurl.addParametersIfAbsent(url.getParameters()).removeParameter(Constants.METHODS_KEY), degree= 2, category= LOW, containerMethod= referOrdestroyCallbackService(), containerClass= CallbackServiceCodec}
 -----
 
 public class CallbackServiceCodec{
@@ -1057,7 +1102,7 @@ public class URL{
 
 
 ----------------------------------
-42. OurMessageChain{ inv.getMethodName().equals(method), degree= 2, category= LOW, containerMethod= reply(), containerClass= DubboProtocol}
+43. OurMessageChain{ inv.getMethodName().equals(method), degree= 2, category= LOW, containerMethod= reply(), containerClass= DubboProtocol}
 -----
 
 public class DubboProtocol{
@@ -1082,7 +1127,7 @@ public class Invocation{
 
 
 ----------------------------------
-43. OurMessageChain{ inv.getMethodName().equals(methodsStr), degree= 2, category= LOW, containerMethod= reply(), containerClass= DubboProtocol}
+44. OurMessageChain{ inv.getMethodName().equals(methodsStr), degree= 2, category= LOW, containerMethod= reply(), containerClass= DubboProtocol}
 -----
 
 public class DubboProtocol{
@@ -1107,7 +1152,7 @@ public class Invocation{
 
 
 ----------------------------------
-44. OurMessageChain{ s.getExchangeChannels().size(), degree= 2, category= LOW, containerMethod= handle(), containerClass= ServersPageHandler}
+45. OurMessageChain{ s.getExchangeChannels().size(), degree= 2, category= LOW, containerMethod= handle(), containerClass= ServersPageHandler}
 -----
 
 public class ServersPageHandler{
@@ -1132,7 +1177,7 @@ public class ExchangeServer{
 
 
 ----------------------------------
-45. OurMessageChain{ inv.getAttachments().get(Constants.INTERFACE_KEY), degree= 2, category= LOW, containerMethod= reply(), containerClass= ThriftProtocol}
+46. OurMessageChain{ inv.getAttachments().get(Constants.INTERFACE_KEY), degree= 2, category= LOW, containerMethod= reply(), containerClass= ThriftProtocol}
 -----
 
 public class ThriftProtocol{
@@ -1150,6 +1195,31 @@ public class Invocation{
 	public void attachments(){
 	...
 		... getAttachments().get();
+	...
+	}
+...
+}
+
+
+----------------------------------
+47. OurMessageChain{ _serializerFactory.getDeserializer(cl).readObject(this), degree= 2, category= LOW, containerMethod= readObject(), containerClass= HessianInput}
+-----
+
+public class HessianInput{
+...
+	public Object readObject(Class cl) throws IOException{
+	...
+		... _serializerFactory.deserializerReadObject();
+	...
+	}
+...
+}
+
+public class SerializerFactory{
+...
+	public Object deserializerReadObject(){
+	...
+		... getDeserializer(cl).readObject();
 	...
 	}
 ...

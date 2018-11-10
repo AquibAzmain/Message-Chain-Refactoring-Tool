@@ -95,18 +95,18 @@ public class MsgChainWorker {
     }
 
     public void detectMessageChains(List<String> filePaths) throws FileNotFoundException {
-        System.out.println("<<<<----- populate classes ---->>>>");
+        System.out.println("\t<<<<----- populating classes ---->>>>");
         for(String filePath: filePaths){
             populateClasses(filePath);
         }
 
-        System.out.println("<<<<----- populate methods ---->>>>");
+        System.out.println("\t<<<<----- populating methods ---->>>>");
         for(OurClass currClass: allClasses){
             populateMethods(currClass);
             populateInstanceVariables(currClass);
         }
 
-        System.out.println("<<<<----- populate message chains ---->>>>");
+        System.out.println("\t<<<<----- populating message chains ---->>>>");
         for(OurMethod currMethod: allMethods){
             populateMethodVariables(currMethod);
             populateMessageChains(currMethod);
